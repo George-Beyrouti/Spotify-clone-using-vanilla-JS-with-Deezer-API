@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <script
+      src="https://kit.fontawesome.com/bd88c1b2f8.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap");
+    </style>
+
+    <link rel="stylesheet" href="registrieren.css" />
+
+    <title>Document</title>
+  </head>
+  <body>
+    <section>
+      <div class="signUp">
+        <h2 class="Spotify-text">
+          <i id="spotify" class="fa-brands fa-spotify"></i>
+          <p>Spotify</p>
+        </h2>
+        <ul class="item">
+          <li class="item-1">
+            <a href="#"><i id="facebook" class="fa-brands fa-facebook"></i> </a
+            >Sign up with Facebook
+          </li>
+          <li class="item-2">
+            <a href="#"><i id="google" class="fa-brands fa-google"></i></a>
+            sign up with Google
+          </li>
+        </ul>
+      </div>
+    </section>
+    <span> ____________________ or ____________________ </span>
+    <br />
+
+    <section class="log-in">
+      <h3 id="h3">Sign up with your email address</h3>
+
+      <form>
+        <label for="username">What's your email?</label><br />
+        <input
+          type="text"
+          id="username"
+          name="username"
+          placeholder="Enter your email."
+        /><br />
+
+        <label for="username">Confirm your email.</label><br />
+        <input
+          type="text"
+          id="username"
+          name="username"
+          placeholder="Enter your email again."
+        /><br />
+
+        <label for="password">Password</label><br />
+        <input
+          type="password"
+          id="password"
+          name="password"
+          placeholder="Create a password."
+        /><br />
+
+        <label for="profileName">What should we call you?</label><br />
+        <input
+          type="text"
+          id="profileName"
+          name="profileName"
+          placeholder="Enter a profile name."
+        /><br />
+        <p id="appearsOnProfile">This appears on your profile.</p>
+
+        <legend>What's your date of birth?</legend>
+        <div class="field-inline-block">
+          <label>DD</label>
+          <input
+            class="input-date"
+            type="text"
+            pattern="[0-9]*"
+            maxlength="2"
+            size="2"
+            class="date-field"
+          />
+        </div>
+
+        <div class="field-inline-block">
+          <label>MM</label>
+          <input
+            class="input-date"
+            type="text"
+            pattern="[0-9]*"
+            maxlength="2"
+            size="2"
+            class="date-field"
+          />
+        </div>
+
+        <div class="field-inline-block">
+          <label>YYYY</label>
+          <input
+            class="input-date"
+            type="text"
+            pattern="[0-9]*"
+            maxlength="4"
+            size="4"
+            class="date-field date-field--year"
+          />
+        </div>
+        <br />
+
+        <div class="gender">
+          <legend>What's your gender?</legend>
+          <input type="radio" name="gender" value="male" /> Male
+          <input type="radio" name="gender" value="female" /> Female
+          <input type="radio" name="gender" value="non-binary" /> Non-binary
+          <input type="radio" name="gender" value="other" /> Other
+          <input type="radio" name="gender" value="prefer not to say" /> Prefer
+          not to say
+        </div>
+
+        <div class="check-list">
+          <input type="checkbox" id="ch-li1" name="ch-li1" />
+          <label for="ch-li1">
+            Please send me news and offers from Spotify.</label
+          ><br />
+          <input type="checkbox" id="ch-li2" name="ch-li2" />
+          <label for="ch-li2"
+            >Share my registration data with Spotify's content providers for
+            marketing purposes. Note that your data may be transferred to a
+            country outside of the EEA as described in our privacy
+            policy.</label
+          ><br />
+          <input type="checkbox" id="ch-li3" name="ch-li3" />
+          <label for="ch-li3">
+            I hereby agree to the <a href="#">Terms of Service</a> and consent
+            to the collection, processing and use of my personal data, as
+            described in more detail in the
+            <a href="#"> Privacy Statement</a>.</label
+          ><br /><br />
+        </div>
+      </form>
+      <button id="button-style">Sign up</button>
+      <p class="logInText">
+        Have an account?<a class="logInLink" href="../Login/login.html"
+          >Log in.</a
+        >
+      </p>
+    </section>
+    <script type="module" src="registrieren.js"></script>
+  </body>
+</html>

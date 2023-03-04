@@ -1,0 +1,24 @@
+{
+  "name": "miniprojectedevgeah",
+  "version": "1.0.0",
+  "description": "- Choose an API for music streaming, such as the [Deezer API](https://developers.deezer.com). - Set up an account with the API provider and obtain the necessary API keys. - Create a new web application and install the necessary libraries or SDKs for interacting with the API. - Use the API documentation to learn how to authenticate with the API and make authorized requests. - Implement the ability to search for artists, albums, and tracks. - Display the search results in a visually appealing way, using HTML, CSS, and JavaScript.",
+  "main": "home.js",
+  "dependencies": {
+    "firebase": "^9.15.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EdSamvel/miniProjectEdEvGeAh.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EdSamvel/miniProjectEdEvGeAh/issues"
+  },
+  "homepage": "https://github.com/EdSamvel/miniProjectEdEvGeAh#readme"
+}

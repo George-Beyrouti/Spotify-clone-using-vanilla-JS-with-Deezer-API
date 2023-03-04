@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spotify - Webplayer</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./Album/styles.css" />
+    <link rel="stylesheet" href="loader.css" />
+  </head>
+  <body>
+    <div class="navbar-custom d-none d-lg-block d-xl-block d-xxl-block">
+      <ul class="navbar-nav">
+        <li class="nav-item my-3">
+          <div
+            class="text-light heading d-flex align-items-center justify-content-flex-start mt-3"
+          >
+            <i class="fa-brands fa-spotify mx-3 p-1"></i> Spotify
+          </div>
+        </li>
+        <li class="nav-item">
+          <button
+            type="button"
+            class="btn w-100 h-50 py-md-2 text-light button-hover text-left d-flex align-items-center justify-content-around"
+            style="height: 60px"
+          >
+            <i class="fa-solid fa-house mx-3"></i>
+            <div class="w-75 d-flex">
+              <a class="gotohome" href="./index.html">Home</a>
+            </div>
+          </button>
+        </li>
+        <li class="nav-item">
+          <button
+            type="button"
+            class="btn w-100 h-50 py-md-2 text-light button-hover text-left d-flex align-items-center justify-content-around"
+            style="height: 60px"
+          >
+            <i class="fa-solid fa-magnifying-glass mx-3"></i>
+            <div class="w-75 d-flex">
+              <a class="gotohome" href="./Search/search.html">Search</a>
+            </div>
+          </button>
+        </li>
+        <li class="nav-item">
+          <button
+            type="button"
+            class="btn w-100 h-50 py-md-2 text-light button-hover text-left d-flex align-items-center justify-content-around"
+            style="height: 60px"
+          >
+            <i class="fa-regular fa-bookmark mx-3"></i>
+            <div class="w-75 d-flex">Your Library</div>
+          </button>
+        </li>
+        <li class="nav-item margin-top">
+          <button
+            type="button"
+            class="btn w-100 h-50 py-md-2 text-light button-hover text-left d-flex align-items-center justify-content-around"
+            style="height: 60px"
+          >
+            <i class="fa-solid fa-plus mx-2"></i>
+            <div class="w-75 d-flex">Create Playlist</div>
+          </button>
+        </li>
+        <li class="nav-item">
+          <button
+            type="button"
+            class="btn w-100 h-50 py-md-2 text-light button-hover text-left d-flex align-items-center justify-content-around"
+            style="height: 60px"
+          >
+            <i class="fa-solid fa-heart mx-2"></i>
+            <div class="w-75 d-flex">Liked Songs</div>
+          </button>
+        </li>
+      </ul>
+      <div class="allplaylists mt-3">
+        <ul>
+          <a><li class="nav-item-playlists">Blues</li> </li></a>
+          <a><li class="nav-item-playlists">Rock</li></a>
+          <a><li class="nav-item-playlists">Jazz</li></a>
+          <a><li class="nav-item-playlists">Rap</li></a>
+          <a
+            ><li class="nav-item-playlists">
+              POP <i class="fa-solid fa-user-group"></i></li
+          ></a>
+          <a><li class="nav-item-playlists">Techno</li></a>
+          <a><li class="nav-item-playlists">Classic</li></a>
+          
+        </ul>
+      </div>
+      <div>
+        <span class="m-3 download"
+          ><i class="fa-regular fa-circle-down mt-3"></i> Install App</span
+        >
+      </div>
+    </div>
+    <main class="body">
+      <nav class="navbar sticky-top mb-3">
+        <div class="d-flex align-items-center justify-content-between">
+          <div class="d-flex"></div>
+          <i class="fa-solid fa-chevron-left chevrons"></i
+          ><i class="fa-solid fa-chevron-right chevrons"></i>
+        </div>
+
+        <div class="d-flex align-items-center" id="rightnav">
+          <div style="margin-right: 1rem">
+            <button
+              type="button"
+              class="btn btn-outline-white text-light"
+              style="border-radius: 20px"
+            >
+              Upgrade
+            </button>
+          </div>
+          <div class="dropdown">
+            <button
+              class="btn btn-dark dropdown-toggle"
+              type="button"
+              id="dropdownMenuButton1"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+              style="border-radius: 25px"
+            >
+              <img
+                src="https://i.pinimg.com/564x/08/35/96/083596835424340eda90439fd20e5ee9.jpg"
+                style="width: 30px; height: 30px; border-radius: 50%"
+              />
+              <span id="userName"></span>
+            </button>
+            <ul
+              class="dropdown-menu dropdown-menu-dark"
+              aria-labelledby="dropdownMenuButton1"
+            >
+              <li>
+                <a class="dropdown-item" href="./Login/login.html">Log out</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <div class="margin-top">
+        <h3 class="greeting mb-3">Good morning</h3>
+      </div>
+      <div>
+        <div
+          class="row row-cols-2 row-cols-md-2 row-cols-lg-3 row-cols-xl-5 g-xl-2 g-xxl-3"
+          id="topsidecards"
+        >
+          <div class="col" id="top-buttons">
+            <div class="background-card mb-3" style="max-width: 540px">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img
+                    src="https://www.adobe.com/express/create/cover/media_1a853fd182c6e60cdbc8d24538ff63f378b5181c8.jpeg?width=400&format=jpeg&optimize=medium"
+                    class="img-fluid rounded-start"
+                    style="height: 100%; min-width: 100%"
+                    alt="..."
+                  />
+                </div>
+                <div class="col-md-8 d-flex align-items-center">
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="background-card mb-3" style="max-width: 540px">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img
+                    src="https://d1csarkz8obe9u.cloudfront.net/themedlandingpages/tlp_hero_album-covers-d12ef0296af80b58363dc0deef077ecc-1552649680.jpg"
+                    class="img-fluid rounded-start"
+                    style="height: 100%; width: 100%"
+                    alt="..."
+                  />
+                </div>
+                <div class="col-md-8 d-flex align-items-center">
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="background-card mb-3" style="max-width: 540px">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img
+                    src="https://www.musicnotes.com/now/wp-content/uploads/the-miracle-queen.jpg"
+                    class="img-fluid rounded-start"
+                    style="height: 100%; width: 100%"
+                    alt="..."
+                  />
+                </div>
+                <div class="col-md-8 d-flex align-items-center">
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="background-card mb-3" style="max-width: 540px">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img
+                    src="https://www.sleek-mag.com/wp-content/uploads/2016/08/AlbumCovers_Blonde-1200x1200.jpg"
+                    class="img-fluid rounded-start"
+                    style="height: 100%; width: 100%"
+                    alt="..."
+                  />
+                </div>
+                <div class="col-md-8 d-flex align-items-center">
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="background-card mb-3" style="max-width: 540px">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img
+                    src="https://www.rockarchive.com/media/1890/david-bowie-db001duffy.jpg?crop=0.19186424300418511,0.18786141133986681,0.20427102269629802,0.20827385436061632&cropmode=percentage&width=800&height=800&rnd=132951122240000000&overlay=watermark.png&overlay.size=230,20&overlay.position=0,780"
+                    class="img-fluid rounded-start"
+                    style="height: 100%; width: 100%"
+                    alt="..."
+                  />
+                </div>
+                <div class="col-md-8 d-flex align-items-center">
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="background-card mb-3" style="max-width: 540px">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img
+                    src="http://cdn.cnn.com/cnnnext/dam/assets/210326104449-02-rizzoli-album-art-covers-restricted.jpg"
+                    class="img-fluid rounded-start"
+                    style="height: 100%; width: 100%"
+                    alt="..."
+                  />
+                </div>
+                <div class="col-md-8 d-flex align-items-center">
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="background-card mb-3" style="max-width: 540px">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img
+                    src="https://media.npr.org/assets/img/2012/12/07/mellon-collie-and-the-infinite-sadness---cover-art_custom-a7b8e04bc3d49db97a1d9aea22fd04581200e417.jpg"
+                    class="img-fluid rounded-start"
+                    style="height: 100%; width: 100%"
+                    alt="..."
+                  />
+                </div>
+                <div class="col-md-8 d-flex align-items-center">
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="background-card mb-3" style="max-width: 540px">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img
+                    src="https://blog.dozmia.com/content/images/2019/01/Portrait-The-Weeknd.jpg"
+                    class="img-fluid rounded-start"
+                    style="height: 100%; width: 100%"
+                    alt="..."
+                  />
+                </div>
+                <div class="col-md-8 d-flex align-items-center">
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="background-card mb-3" style="max-width: 540px">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/en/5/5b/Kavinsky_Nightcall_2010.png"
+                    class="img-fluid rounded-start"
+                    style="height: 100%; width: 100%"
+                    alt="..."
+                  />
+                </div>
+                <div class="col-md-8 d-flex align-items-center">
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="background-card mb-3" style="max-width: 540px">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img
+                    src="https://images.fineartamerica.com/images/artworkimages/mediumlarge/3/rap-album-cover-isaiah-morris.jpg"
+                    class="img-fluid rounded-start"
+                    style="height: 100%; width: 100%"
+                    alt="..."
+                  />
+                </div>
+                <div class="col-md-8 d-flex align-items-center">
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <h3 class="greeting mb-3 mt-3">Recently Played</h3>
+
+      <div class="container-fluid">
+        <div class="row row-cols-7 g-3" id="midsidecards">
+          <!-- row row-cols-2 row-cols-md-2 row-cols-lg-3 row-cols-xl-5 g-xl-2 g-xxl-3 -->
+
+          <div class="col">
+            <div class="card" id="darker">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/en/2/25/YellowcardLightsandSounds.jpg"
+                class="img-fluid rounded-start p-2"
+                style="height: 100%; min-width: 100%"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Song</h5>
+                <p class="card-text">Lorem ipsum...</p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card" id="darker">
+              <img
+                src="https://i.pinimg.com/originals/28/16/66/2816667689d3dc79f5d6885a45ebbebb.jpg"
+                class="img-fluid rounded-start p-2"
+                style="height: 100%; min-width: 100%"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Song</h5>
+                <p class="card-text">Lorem ipsum...</p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card" id="darker">
+              <img
+                src="https://www.billboard.com/wp-content/uploads/2022/03/35.-Metallica-%E2%80%98Master-of-Puppets-1986-album-art-billboard-1240.jpg?w=600"
+                class="img-fluid rounded-start p-2"
+                style="height: 100%; min-width: 100%"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Song</h5>
+                <p class="card-text">Lorem ipsum...</p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card" id="darker">
+              <img
+                src="https://media.pitchfork.com/photos/5bcdf9b8a8f1ec1406cb9892/1:1/w_600/Queen_Bohemian%20Rhapsody%20OST.jpg"
+                class="img-fluid rounded-start p-2"
+                style="height: 100%; min-width: 100%"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Song</h5>
+                <p class="card-text">Lorem ipsum...</p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card" id="darker">
+              <img
+                src="https://i.scdn.co/image/ab6761610000e5eba00b11c129b27a88fc72f36b"
+                class="img-fluid p-2"
+                style="height: 100%; min-width: 100%; border-radius: 50%"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Artist</h5>
+                <p class="card-text">Lorem ipsum...</p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card" id="darker">
+              <img
+                src="https://i.scdn.co/image/ab67706f0000000387bff188c40608c48b82068f"
+                class="img-fluid rounded-start p-2"
+                style="height: 100%; min-width: 100%"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Song</h5>
+                <p class="card-text">Lorem ipsum...</p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card" id="darker">
+              <img
+                src="https://i.pinimg.com/originals/ee/2c/b9/ee2cb910d219ae7f276fadbae2fc3196.jpg"
+                class="img-fluid rounded-start p-2"
+                style="height: 100%; min-width: 100%"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Song</h5>
+                <p class="card-text">Lorem ipsum...</p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card" id="darker">
+              <img
+                src="https://images.squarespace-cdn.com/content/v1/53b6eb62e4b06e0feb2d8e86/1607362705516-R5Q22H4FVIVPNMW8OWD7/SamSpratt_KidCudi_ManOnTheMoon3_AlbumCover_Web.jpg?format=original"
+                class="img-fluid rounded-start p-2"
+                style="height: 100%; width: 100%"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Song</h5>
+                <p class="card-text">Lorem ipsum...</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="margin-top">
+        <span>
+          <h3 class="greeting mb-1 mt-3">Shows to try</h3>
+          <p class="text-muted">Podcasts we think you'll get hooked on.</p>
+        </span>
+        <div>
+          <div class="container-fluid">
+            <div
+              class="row row-cols-sm-2 row-cols-md-3 row-cols-xl-7 g-4"
+              id="bottomsiderow"
+            >
+              <div class="col-xl-2 transition-play">
+                <div class="card" id="darker">
+                  <img
+                    src="https://i.pinimg.com/originals/45/22/8f/45228f8cd8ac51b0db4e1b64e5db2a4c.jpg"
+                    class="card-img-top p-2"
+                    alt="..."
+                  />
+
+                  <div class="card-body">
+                    <h5 class="card-title">Chill</h5>
+                    <div
+                      class="d-flex align-items-baseline justify-content-between"
+                    >
+                      <p class="card-text">Chill lofi hip-hop mix.</p>
+                      <i class="fa-solid fa-play 2-xl"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-2 transition-play">
+                <div class="card h-100" id="darker">
+                  <img
+                    src="https://images.unsplash.com/photo-1624339389686-cfca209567df?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8YWVzdGhldGljJTIwc2t5fGVufDB8fDB8fA%3D%3D&w=1000&q=80"
+                    class="card-img-top p-2 aspect-ratio-one-to-one"
+                    alt="..."
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">Feel Good</h5>
+                    <div
+                      class="d-flex align-items-baseline justify-content-between"
+                    >
+                      <p class="card-text">Chill lofi hip-hop mix.</p>
+                      <i class="fa-solid fa-play 2-xl"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-2 transition-play">
+                <div class="card h-100" id="darker">
+                  <img
+                    src="https://pbs.twimg.com/media/EIFEWqVU8AAw07Z.jpg"
+                    class="card-img-top p-2"
+                    alt="..."
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <div
+                      class="d-flex align-items-baseline justify-content-between"
+                    >
+                      <p class="card-text">Chill lofi hip-hop mix.</p>
+                      <i class="fa-solid fa-play 2-xl"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-2 transition-play">
+                <div class="card h-100" id="darker">
+                  <img
+                    src="https://hips.hearstapps.com/hmg-prod/images/archetypes-1661260594.jpeg"
+                    class="card-img-top p-2"
+                    alt="..."
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <div
+                      class="d-flex align-items-baseline justify-content-between"
+                    >
+                      <p class="card-text">Chill lofi hip-hop mix.</p>
+                      <i class="fa-solid fa-play 2-xl"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-2 transition-play">
+                <div class="card h-100" id="darker">
+                  <img
+                    src="https://lite-images-i.scdn.co/image/ab6765630000ba8a74ab03748c1f2e843974a968"
+                    class="card-img-top p-2"
+                    alt="..."
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <div
+                      class="d-flex align-items-baseline justify-content-between"
+                    >
+                      <p class="card-text">Chill lofi hip-hop mix.</p>
+                      <i class="fa-solid fa-play 2-xl"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-2 transition-play">
+                <div class="card h-100" id="darker">
+                  <img
+                    src="https://images.squarespace-cdn.com/content/v1/5ffdb7a83ff3ea0604bdfef2/0b181a38-bd03-4c82-9f89-210cc302b3d0/1024x1024+IG.jpg"
+                    class="card-img-top p-2"
+                    alt="..."
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <div
+                      class="d-flex align-items-baseline justify-content-between"
+                    >
+                      <p class="card-text">Chill lofi hip-hop mix.</p>
+                      <i class="fa-solid fa-play 2-xl"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- PLAY BAR -->
+    <!-- LEFT -->
+    <div class="container-fluid playBar d-flex justify-content-between align-items-center fixed-bottom">
+      <div class="playbar d-flex align-items-center">
+         <img class="albumImg img-fluid lilAlb m-2 track-art"/>
+          <!--src="https://glastonbury.davidbowie.com/images/album_cover.png" -->
+        <div class="justify-content-between now-playing ">
+          <h6 class="track-name">Absolute Beginners</h6>
+          <p class="track-artist">David Bowie</p>
+        </div>
+        <div class="justify-content-between px-3 py-1">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M12 21C11.355 20.428 10.626 19.833 9.85502 19.2H9.84502C7.13002 16.98 4.05302 14.468 2.69402 11.458C2.24754 10.4997 2.01093 9.45712 2.00001 8.4C1.99703 6.94948 2.57879 5.55898 3.61383 4.54276C4.64887 3.52654 6.04981 2.97039 7.50002 3C8.68065 3.00186 9.83586 3.34308 10.828 3.983C11.264 4.26596 11.6584 4.60825 12 5C12.3435 4.60979 12.7381 4.2677 13.173 3.983C14.1648 3.34295 15.3197 3.00171 16.5 3C17.9502 2.97039 19.3512 3.52654 20.3862 4.54276C21.4213 5.55898 22.003 6.94948 22 8.4C21.9898 9.45881 21.7532 10.5032 21.306 11.463C19.947 14.473 16.871 16.984 14.156 19.2L14.146 19.208C13.374 19.837 12.646 20.432 12.001 21.008L12 21ZM7.50002 5C6.56853 4.98834 5.6701 5.34484 5.00002 5.992C4.35441 6.62616 3.99358 7.49504 3.99994 8.4C4.01135 9.1705 4.18585 9.92985 4.51202 10.628C5.15353 11.9267 6.01913 13.102 7.06902 14.1C8.06002 15.1 9.20002 16.068 10.186 16.882C10.459 17.107 10.737 17.334 11.015 17.561L11.19 17.704C11.457 17.922 11.733 18.148 12 18.37L12.013 18.358L12.019 18.353H12.025L12.034 18.346H12.039H12.044L12.062 18.331L12.103 18.298L12.11 18.292L12.121 18.284H12.127L12.136 18.276L12.8 17.731L12.974 17.588C13.255 17.359 13.533 17.132 13.806 16.907C14.792 16.093 15.933 15.126 16.924 14.121C17.9741 13.1236 18.8397 11.9485 19.481 10.65C19.8131 9.9458 19.9901 9.1785 20.0001 8.4C20.0042 7.49783 19.6435 6.63229 19 6C18.3312 5.34992 17.4326 4.99048 16.5 5C15.3619 4.99032 14.274 5.46736 13.51 6.311L12 8.051L10.49 6.311C9.72609 5.46736 8.6381 4.99032 7.50002 5Z"
+              fill="#f5f5f5"></path>
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+            class="bi bi-folder-minus mx-4" viewBox="0 0 16 16">
+            <path
+              d="m.5 3 .04.87a1.99 1.99 0 0 0-.342 1.311l.637 7A2 2 0 0 0 2.826 14H9v-1H2.826a1 1 0 0 1-.995-.91l-.637-7A1 1 0 0 1 2.19 4h11.62a1 1 0 0 1 .996 1.09L14.54 8h1.005l.256-2.819A2 2 0 0 0 13.81 3H9.828a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 6.172 1H2.5a2 2 0 0 0-2 2zm5.672-1a1 1 0 0 1 .707.293L7.586 3H2.19c-.24 0-.47.042-.683.12L1.5 2.98a1 1 0 0 1 1-.98h3.672z" />
+            <path d="M11 11.5a.5.5 0 0 1 .5-.5h4a.5.5 0 1 1 0 1h-4a.5.5 0 0 1-.5-.5z" />
+          </svg>
+        </div>
+      </div>
+      <!-- MIDDLE -->
+      <div class="align-items-center play">
+        <div class="d-flex justify-content-center">
+          <div class="playbar">
+            <svg class="mx-2" width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M20 20H14.5L16.549 17.95L13.42 14.82L14.83 13.41L17.96 16.539L20 14.5V20ZM5.41 20L4 18.59L16.54 6.04L14.5 4H20V9.5L17.96 7.46L5.411 20H5.41ZM9.17 10.58L4 5.41L5.41 4L10.59 9.17L9.17 10.579V10.58Z"
+                fill="#F5F5F5"></path>
+            </svg>
+            <span onclick="prevTrack()"><svg class="mx-2 prev-track"  width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M18 18L9.5 12L18 6V18ZM8 18H6V6H8V18Z" fill="#F5F5F5"></path>
+            </svg></span>
+            <!-- <span onclick="playpauseTrack()"><svg class="mx-2" width="35" height="35" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M12 22C6.47967 21.994 2.00606 17.5204 2 12V11.8C2.10993 6.30455 6.63459 1.92797 12.1307 2.0009C17.6268 2.07382 22.0337 6.5689 21.9978 12.0654C21.9619 17.5618 17.4966 21.9989 12 22ZM10 7.50002V16.5L16 12L10 7.50002Z"
+                fill="#F5F5F5"></path>
+            </svg></span> -->
+            <span class="mx-2 playpause-track" onclick="playpauseTrack()"><i class="fa fa-play-circle fa-5x"></i></span>
+            <span onclick="nextTrack()"><svg class="mx-2" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M18 18H16V6H18V18ZM6 18V6L14.5 12L6 18Z" fill="#F5F5F5"></path>
+            </svg></span>
+            
+            <svg class="mx-2" width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M7 22L3 18L7 14V17H17V13H19V18C19 18.5523 18.5523 19 18 19H7V22ZM7 11H5V6C5 5.44772 5.44772 5 6 5H17V2L21 6L17 10V7H7V11Z"
+                fill="#F5F5F5"></path>
+            </svg>
+          </div>
+        </div>
+    
+        <div class="playbar align-items-center justify-content-space-between d-flex px-2 m-0 position-relative">
+          <span class="current-time">00:00</span>
+          <!-- <hr class="playbarline" /> -->
+          <input type="range" min="1" max="100" value="0" class="seek_slider" onchange="seekTo()">
+          <span class="total-duration">00:00</span>
+        </div>
+      </div>
+    
+      <!-- RIGHT -->
+      <div class="playbar align-items-center justify-content-space-between d-flex px-2 m-0 position-relative">
+        <span><svg class="mx-1" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+            class="bi bi-list" viewBox="0 0 16 16">
+            <path fill-rule="evenodd"
+              d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+          </svg></span>
+        <span><svg class="mx-1" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+            class="bi bi-speaker" viewBox="0 0 16 16">
+            <path
+              d="M12 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h8zM4 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H4z" />
+            <path
+              d="M8 4.75a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5zM8 6a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm0 3a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm-3.5 1.5a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z" />
+          </svg></span>
+        
+        <i class="fa fa-volume-down volume"></i>
+        <input type="range" min="1" max="100" value="99" class="volume_slider" onchange="setVolume()">
+        <i class="fa fa-volume-up volume"></i>
+    
+      </div>
+    </div>
+    <!-- loadar -->
+    
+    <div class="loader" id="loader">
+      <div class="loader-inner">
+        <div class="loader-line-wrap">
+          <div class="loader-line"></div>
+        </div>
+        <div class="loader-line-wrap">
+          <div class="loader-line"></div>
+        </div>
+        <div class="loader-line-wrap">
+          <div class="loader-line"></div>
+        </div>
+        <div class="loader-line-wrap">
+          <div class="loader-line"></div>
+        </div>
+        <div class="loader-line-wrap">
+          <div class="loader-line"></div>
+        </div>
+      </div>
+    </div>
+    <!--content of the page-->
+    <script>
+      setTimeout(() => loader.classList.add("d-none"), 3 * 1000);
+    </script>
+    <script src="player.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://kit.fontawesome.com/8539ff3369.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="home.js"></script>
+  </body>
+</html>

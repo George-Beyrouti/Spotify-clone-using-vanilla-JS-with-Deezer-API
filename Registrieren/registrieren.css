@@ -1,0 +1,206 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  box-sizing: border-box;
+}
+
+section {
+  display: grid;
+  place-items: center;
+}
+
+.signUp {
+  height: 300px;
+  width: 600px;
+  display: grid;
+  place-items: center;
+}
+
+.Spotify-text {
+  font-size: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0;
+}
+
+.item-1,
+.item-2 {
+  height: 30px;
+  width: 400px;
+  list-style-type: none;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.3rem;
+  margin: 20px auto;
+  padding: 5px 0 5px 0;
+}
+
+.item-1 {
+  border: 1px solid #01497c;
+  background-color: #01497c;
+  border-radius: 25px;
+  text-align: center;
+  color: white;
+}
+
+.item-2 {
+  border: 1px solid rgb(8, 8, 8);
+  border-radius: 25px;
+  text-align: center;
+}
+
+#spotify {
+  font-size: 1.5em;
+  margin-right: 10px;
+  border-radius: 50px;
+}
+
+#facebook {
+  color: white;
+  margin-right: 10px;
+}
+
+#google {
+  margin-right: 10px;
+}
+
+li:hover {
+  font-weight: bold;
+  cursor: pointer;
+  color: #bc6c25;
+}
+
+span {
+  margin-top: 50px;
+  display: grid;
+  place-items: center;
+  color: gray;
+}
+
+.log-in {
+  height: 400px;
+  display: grid;
+  place-items: center;
+  font-family: "Montserrat", sans-serif;
+}
+
+#h3 {
+  margin: 20px 0 30px 0;
+}
+
+#username,
+#email,
+#password {
+  font-family: "Montserrat", sans-serif;
+  color: black;
+  height: 40px;
+  width: 600px;
+  border-radius: 5px;
+  margin-bottom: 30px;
+  margin-top: 10px;
+  font-size: 14px;
+  padding-left: 10px;
+}
+
+#profileName {
+  font-family: "Montserrat", sans-serif;
+  color: black;
+  height: 40px;
+  width: 600px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  font-size: 14px;
+  padding-left: 10px;
+}
+
+#appearsOnProfile {
+  margin-top: 0px;
+  padding-top: 0px;
+  font-size: 14px;
+}
+
+fieldset {
+  border: none;
+  background: #efefef;
+  margin-bottom: 0.5rem;
+}
+
+legend {
+  margin-top: 20px;
+  padding: 20px 0 20px 0;
+}
+
+.input-date,
+select {
+  font-family: "Roboto", sans-serif;
+  border: solid 1px #89a6bb;
+  padding: 0.5rem;
+  border-radius: 3px;
+  -webkit-appearance: none;
+}
+
+h2 {
+  margin: 3rem 0 1rem;
+}
+
+.date-field {
+  width: 30px;
+  text-align: center;
+}
+
+.single-date-field {
+  width: 120px;
+}
+
+.field-inline-block {
+  display: inline-block;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+.gender {
+  padding: 20px 0 20px 0;
+}
+
+.check-list {
+  height: 200px;
+  width: 600px;
+  margin: 20px 0 20px 0;
+  padding: 10px;
+}
+
+#ch-li1,
+#ch-li2,
+#ch-li3 {
+  margin: 10px 0 10px 0;
+}
+
+#button-style {
+  width: 160px;
+  height: 60px;
+  border: 1px solid rgb(39, 247, 136);
+  font-family: "Montserrat", sans-serif;
+  font-size: 1em;
+  font-weight: bold;
+  border-radius: 35px;
+  background-color: rgb(39, 247, 136);
+  margin: 30px 0 10px 0;
+}
+
+#button-style:hover {
+  color: white;
+  font-size: 1.4em;
+}
+
+.logInLink {
+  color: rgb(71, 183, 71);
+}
+
+.logInText {
+  padding: 0px 0 30px 0;
+}
